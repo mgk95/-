@@ -1,0 +1,46 @@
+// Dota2 Editor
+// Get latest version: https://github.com/zombieJ/nw-dota2editor
+
+"DOTAHeroes"
+{
+
+	"XQ"
+	{
+		"override_hero"	"npc_dota_hero_nyx_assassin"
+		"Models"	"models/heroes/nerubian_assassin/nerubian_assassin.vmdl"
+		// 转身速度
+		"MovementTurnRate"	"1"
+		"StatusHealth"	"1"
+		"Ability1"	"飞翔"
+		"Ability2"	"分裂"
+		"Ability3"	"newAbility_6"
+		"Ability4"	""
+		"Ability5"	""
+		"Ability6"	""
+		"Ability7"	""
+		"Ability8"	""
+		"Ability9"	""
+		"Ability10"	""
+		"Ability11"	""
+		"Ability12"	""
+		"Ability13"	""
+		"Ability14"	""
+		"Ability15"	""
+		"Ability16"	""
+		"Ability17"	""
+		"Ability18"	""
+		"Ability19"	""
+		"Ability20"	""
+		"Ability21"	""
+		"Ability22"	""
+		"Ability23"	""
+		"Ability24"	""
+		"DisableWearables"	"1"
+		"AttributeBaseStrength"	"10"
+		"AttributeBaseAgility"	"10"
+		"AttributeBaseIntelligence"	"10"
+		"AttributeStrengthGain"	"10"
+		"AttributeAgilityGain"	"10"
+		"AttributeIntelligenceGain"	"10"
+	}
+}

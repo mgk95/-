@@ -1,0 +1,939 @@
+// Dota2 Editor
+// Get latest version: https://github.com/zombieJ/nw-dota2editor
+
+"DOTAAbilities"
+{
+
+	"item_A"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_blades_of_attack"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ID"	"1506"
+		"ItemCastOnPickup"	"0"
+		"ItemCost"	"100"
+		"ItemDroppable"	"1"
+		"ItemSellable"	"1"
+		"ItemShareability"	"ITEM_FULLY_SHAREABLE"
+		"ItemPurchasable"	"1"
+		"ItemKillable"	"1"
+		"ItemAlertable"	"1"
+		"SecretShop"	"1"
+		"ItemRecipe"	"0"
+		"ItemRequirements"	{}
+		"Modifiers"
+		{
+			"modifier_item_A"
+			{
+				"IsBuff"	"1"
+				"IsPurgable"	"0"
+				"IsHidden"	"1"
+				"Passive"	"1"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_POST_ATTACK"	"%attack"
+				}
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"attack"	"50"
+			}
+		}
+	}
+
+	"item_A_clone"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_blades_of_attack"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ID"	"1500"
+		"ItemCastOnPickup"	"0"
+		"ItemCost"	"100"
+		"ItemDroppable"	"1"
+		"ItemSellable"	"1"
+		"ItemShareability"	"ITEM_FULLY_SHAREABLE"
+		"ItemPurchasable"	"1"
+		"ItemKillable"	"1"
+		"ItemAlertable"	"1"
+		"SecretShop"	"1"
+		"ItemRecipe"	"0"
+		"ItemRequirements"	{}
+		"Modifiers"
+		{
+			"modifier_item_A"
+			{
+				"IsBuff"	"1"
+				"IsPurgable"	"0"
+				"IsHidden"	"1"
+				"Passive"	"1"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_POST_ATTACK"	"%attack"
+				}
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"attack"	"100"
+			}
+		}
+	}
+
+	"item_A_clone_clone"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_blades_of_attack"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ID"	"1504"
+		"ItemCastOnPickup"	"0"
+		"ItemCost"	"100"
+		"ItemDroppable"	"1"
+		"ItemSellable"	"1"
+		"ItemShareability"	"ITEM_FULLY_SHAREABLE"
+		"ItemPurchasable"	"1"
+		"ItemKillable"	"1"
+		"ItemAlertable"	"1"
+		"SecretShop"	"1"
+		"ItemRecipe"	"0"
+		"ItemRequirements"	{}
+		"Modifiers"
+		{
+			"modifier_item_A"
+			{
+				"IsBuff"	"1"
+				"IsPurgable"	"0"
+				"IsHidden"	"1"
+				"Passive"	"1"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_POST_ATTACK"	"%attack"
+				}
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"attack"	"200"
+			}
+		}
+	}
+
+	"item_C"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_blade_mail_axe_pw"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ID"	"1501"
+		"ItemCastOnPickup"	"0"
+		"ItemDroppable"	"1"
+		"ItemSellable"	"1"
+		"ItemKillable"	"1"
+		"ItemAlertable"	"1"
+		"ItemRequirements"	{}
+		"Modifiers"
+		{
+			"modifier_item_C"
+			{
+				"Passive"	"1"
+				"IsBuff"	"0"
+				"IsHidden"	"1"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%amor"
+				}
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"amor"	"5"
+			}
+		}
+	}
+
+	"item_C_clone"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_blade_mail_axe_pw"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ID"	"1505"
+		"ItemCastOnPickup"	"0"
+		"ItemDroppable"	"1"
+		"ItemSellable"	"1"
+		"ItemKillable"	"1"
+		"ItemAlertable"	"1"
+		"ItemRequirements"	{}
+		"Modifiers"
+		{
+			"modifier_item_C"
+			{
+				"Passive"	"1"
+				"IsBuff"	"0"
+				"IsHidden"	"1"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%amor"
+				}
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"amor"	"10"
+			}
+		}
+	}
+
+	"item_C_clone_clone"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_blade_mail_axe_pw"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ID"	"1507"
+		"ItemCastOnPickup"	"0"
+		"ItemDroppable"	"1"
+		"ItemSellable"	"1"
+		"ItemKillable"	"1"
+		"ItemAlertable"	"1"
+		"ItemRequirements"	{}
+		"Modifiers"
+		{
+			"modifier_item_C"
+			{
+				"Passive"	"1"
+				"IsBuff"	"0"
+				"IsHidden"	"1"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%amor"
+				}
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"amor"	"20"
+			}
+		}
+	}
+
+	"item_D"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_bloodstone"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ID"	"1502"
+		"ItemCastOnPickup"	"0"
+		"ItemDroppable"	"1"
+		"ItemSellable"	"1"
+		"ItemKillable"	"1"
+		"ItemAlertable"	"1"
+		"SideShop"	"1"
+		"ItemRequirements"	{}
+		"Modifiers"
+		{
+			"modifier_item_D"
+			{
+				"Attributes"	"MODIFIER_ATTRIBUTE_NONE | MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Passive"	"1"
+				"IsBuff"	"0"
+				"IsHidden"	"1"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_BONUS"	"%health"
+				}
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"health"	"150"
+			}
+		}
+	}
+
+	"item_D_clone"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_bloodstone"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ID"	"1508"
+		"ItemCastOnPickup"	"0"
+		"ItemDroppable"	"1"
+		"ItemSellable"	"1"
+		"ItemKillable"	"1"
+		"ItemAlertable"	"1"
+		"SideShop"	"1"
+		"ItemRequirements"	{}
+		"Modifiers"
+		{
+			"modifier_item_D"
+			{
+				"Attributes"	"MODIFIER_ATTRIBUTE_NONE"
+				"Passive"	"1"
+				"IsBuff"	"0"
+				"IsHidden"	"1"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_BONUS"	"%health"
+				}
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"health"	"300"
+			}
+		}
+	}
+
+	"item_D_clone_clone"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_bloodstone"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ID"	"1509"
+		"ItemCastOnPickup"	"0"
+		"ItemDroppable"	"1"
+		"ItemSellable"	"1"
+		"ItemKillable"	"1"
+		"ItemAlertable"	"1"
+		"SideShop"	"1"
+		"ItemRequirements"	{}
+		"Modifiers"
+		{
+			"modifier_item_D"
+			{
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Passive"	"1"
+				"IsBuff"	"0"
+				"IsHidden"	"1"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_BONUS"	"%health"
+				}
+				"IsPurgable"	"0"
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"health"	"600"
+			}
+		}
+	}
+
+	"item_B"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_skadi"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_NONE"
+		"ID"	"1503"
+		"ItemCastOnPickup"	"0"
+		"ItemDroppable"	"1"
+		"ItemSellable"	"1"
+		"ItemKillable"	"1"
+		"ItemAlertable"	"1"
+		"SideShop"	"1"
+		"ItemRequirements"	{}
+		"Modifiers"
+		{
+			"modifier_item_B"
+			{
+				"IsBuff"	"0"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"	"%agi"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%int"
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"%str"
+				}
+				"Attributes"	"MODIFIER_ATTRIBUTE_NONE | MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Passive"	"1"
+				"IsHidden"	"1"
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"int"	"10"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"agi"	"10"
+			}
+			"03"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"str"	"10"
+			}
+		}
+	}
+
+	"item_B_clone"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_skadi"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_NONE"
+		"ID"	"1510"
+		"ItemCastOnPickup"	"0"
+		"ItemDroppable"	"1"
+		"ItemSellable"	"1"
+		"ItemKillable"	"1"
+		"ItemAlertable"	"1"
+		"SideShop"	"1"
+		"ItemRecipe"	"0"
+		"ItemRequirements"	{}
+		"Modifiers"
+		{
+			"modifier_item_B"
+			{
+				"IsBuff"	"0"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"	"%agi"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%int"
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"%str"
+				}
+				"Attributes"	"MODIFIER_ATTRIBUTE_NONE"
+				"Passive"	"1"
+				"IsHidden"	"1"
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"int"	"20"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"agi"	"20"
+			}
+			"03"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"str"	"20"
+			}
+		}
+	}
+
+	"item_B_clone_clone"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_skadi"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_NONE"
+		"ID"	"1511"
+		"ItemCastOnPickup"	"0"
+		"ItemDroppable"	"1"
+		"ItemSellable"	"1"
+		"ItemKillable"	"1"
+		"ItemAlertable"	"1"
+		"SideShop"	"1"
+		"ItemRequirements"	{}
+		"Modifiers"
+		{
+			"modifier_item_B"
+			{
+				"IsBuff"	"0"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"	"%agi"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%int"
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"%str"
+				}
+				"Attributes"	"MODIFIER_ATTRIBUTE_NONE"
+				"Passive"	"1"
+				"IsHidden"	"1"
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"int"	"40"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"agi"	"40"
+			}
+			"03"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"str"	"40"
+			}
+		}
+	}
+
+	"item_recipe_dsx"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_recipe"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_NONE"
+		"ID"	"1512"
+		"ItemCastOnPickup"	"0"
+		"ItemDroppable"	"1"
+		"ItemSellable"	"1"
+		"ItemKillable"	"1"
+		"ItemAlertable"	"1"
+		"SideShop"	"1"
+		"ItemRecipe"	"1"
+		"ItemResult"	"item_A_clone"
+		"ItemRequirements"
+		{
+			"01"	"item_A;item_A"
+		}
+		"Modifiers"
+		{
+			"modifier_item_B"
+			{
+				"IsBuff"	"0"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"	"%agi"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%int"
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"%str"
+				}
+				"Attributes"	"MODIFIER_ATTRIBUTE_NONE"
+				"Passive"	"1"
+				"IsHidden"	"1"
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"int"	"40"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"agi"	"40"
+			}
+			"03"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"str"	"40"
+			}
+		}
+	}
+
+	"item_recipe_dsx_clone1"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_recipe"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_NONE"
+		"ID"	"1514"
+		"ItemCastOnPickup"	"0"
+		"ItemDroppable"	"1"
+		"ItemSellable"	"1"
+		"ItemKillable"	"1"
+		"ItemAlertable"	"1"
+		"SideShop"	"1"
+		"ItemRecipe"	"1"
+		"ItemResult"	"item_A_clone_clone"
+		"ItemRequirements"
+		{
+			"01"	"item_A_clone;item_A_clone"
+		}
+		"Modifiers"
+		{
+			"modifier_item_B"
+			{
+				"IsBuff"	"0"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"	"%agi"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%int"
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"%str"
+				}
+				"Attributes"	"MODIFIER_ATTRIBUTE_NONE"
+				"Passive"	"1"
+				"IsHidden"	"1"
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"int"	"40"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"agi"	"40"
+			}
+			"03"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"str"	"40"
+			}
+		}
+	}
+
+	"item_recipe_dsx_clone1_clone"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_recipe"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_NONE"
+		"ID"	"1513"
+		"ItemCastOnPickup"	"0"
+		"ItemDroppable"	"1"
+		"ItemSellable"	"1"
+		"ItemKillable"	"1"
+		"ItemAlertable"	"1"
+		"SideShop"	"1"
+		"ItemRecipe"	"1"
+		"ItemResult"	"item_C_clone"
+		"ItemRequirements"
+		{
+			"01"	"item_C;item_C"
+		}
+		"Modifiers"
+		{
+			"modifier_item_B"
+			{
+				"IsBuff"	"0"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"	"%agi"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%int"
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"%str"
+				}
+				"Attributes"	"MODIFIER_ATTRIBUTE_NONE"
+				"Passive"	"1"
+				"IsHidden"	"1"
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"int"	"40"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"agi"	"40"
+			}
+			"03"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"str"	"40"
+			}
+		}
+	}
+
+	"item_recipe_dsx_clone1_clone_clone"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_recipe"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_NONE"
+		"ID"	"1515"
+		"ItemCastOnPickup"	"0"
+		"ItemDroppable"	"1"
+		"ItemSellable"	"1"
+		"ItemKillable"	"1"
+		"ItemAlertable"	"1"
+		"SideShop"	"1"
+		"ItemRecipe"	"1"
+		"ItemResult"	"item_C_clone_clone"
+		"ItemRequirements"
+		{
+			"01"	"item_C_clone;item_C_clone"
+		}
+		"Modifiers"
+		{
+			"modifier_item_B"
+			{
+				"IsBuff"	"0"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"	"%agi"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%int"
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"%str"
+				}
+				"Attributes"	"MODIFIER_ATTRIBUTE_NONE"
+				"Passive"	"1"
+				"IsHidden"	"1"
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"int"	"40"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"agi"	"40"
+			}
+			"03"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"str"	"40"
+			}
+		}
+	}
+
+	"item_recipe_dsx_clone1_clone_clone_clone"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_recipe"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_NONE"
+		"ID"	"1516"
+		"ItemCastOnPickup"	"0"
+		"ItemDroppable"	"1"
+		"ItemSellable"	"1"
+		"ItemKillable"	"1"
+		"ItemAlertable"	"1"
+		"SideShop"	"1"
+		"ItemRecipe"	"1"
+		"ItemResult"	"item_D_clone"
+		"ItemRequirements"
+		{
+			"01"	"item_D;item_D"
+		}
+		"Modifiers"
+		{
+			"modifier_item_B"
+			{
+				"IsBuff"	"0"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"	"%agi"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%int"
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"%str"
+				}
+				"Attributes"	"MODIFIER_ATTRIBUTE_NONE"
+				"Passive"	"1"
+				"IsHidden"	"1"
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"int"	"40"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"agi"	"40"
+			}
+			"03"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"str"	"40"
+			}
+		}
+	}
+
+	"item_recipe_dsx_clone1_clone_clone_clone_clone"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_recipe"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_NONE"
+		"ID"	"1517"
+		"ItemCastOnPickup"	"0"
+		"ItemDroppable"	"1"
+		"ItemSellable"	"1"
+		"ItemKillable"	"1"
+		"ItemAlertable"	"1"
+		"SideShop"	"1"
+		"ItemRecipe"	"1"
+		"ItemResult"	"item_D_clone_clone"
+		"ItemRequirements"
+		{
+			"01"	"item_D_clone;item_D_clone"
+		}
+		"Modifiers"
+		{
+			"modifier_item_B"
+			{
+				"IsBuff"	"0"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"	"%agi"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%int"
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"%str"
+				}
+				"Attributes"	"MODIFIER_ATTRIBUTE_NONE"
+				"Passive"	"1"
+				"IsHidden"	"1"
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"int"	"40"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"agi"	"40"
+			}
+			"03"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"str"	"40"
+			}
+		}
+	}
+
+	"item_recipe_dsx_clone1_clone_clone_clone_clone_clone"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_recipe"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_NONE"
+		"ID"	"1518"
+		"ItemCastOnPickup"	"0"
+		"ItemDroppable"	"1"
+		"ItemSellable"	"1"
+		"ItemKillable"	"1"
+		"ItemAlertable"	"1"
+		"SideShop"	"1"
+		"ItemRecipe"	"1"
+		"ItemResult"	"item_B_clone"
+		"ItemRequirements"
+		{
+			"01"	"item_B;item_B"
+		}
+		"Modifiers"
+		{
+			"modifier_item_B"
+			{
+				"IsBuff"	"0"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"	"%agi"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%int"
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"%str"
+				}
+				"Attributes"	"MODIFIER_ATTRIBUTE_NONE"
+				"Passive"	"1"
+				"IsHidden"	"1"
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"int"	"40"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"agi"	"40"
+			}
+			"03"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"str"	"40"
+			}
+		}
+	}
+
+	"item_recipe_dsx_clone1_clone_clone_clone_clone_clone_clone"
+	{
+		"BaseClass"	"item_datadriven"
+		"AbilityTextureName"	"item_recipe"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_NONE"
+		"ID"	"1519"
+		"ItemCastOnPickup"	"0"
+		"ItemDroppable"	"1"
+		"ItemSellable"	"1"
+		"ItemKillable"	"1"
+		"ItemAlertable"	"1"
+		"SideShop"	"1"
+		"ItemRecipe"	"1"
+		"ItemResult"	"item_B_clone_clone"
+		"ItemRequirements"
+		{
+			"01"	"item_B_clone;item_B_clone"
+		}
+		"Modifiers"
+		{
+			"modifier_item_B"
+			{
+				"IsBuff"	"0"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"	"%agi"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%int"
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"%str"
+				}
+				"Attributes"	"MODIFIER_ATTRIBUTE_NONE"
+				"Passive"	"1"
+				"IsHidden"	"1"
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"int"	"40"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"agi"	"40"
+			}
+			"03"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"str"	"40"
+			}
+		}
+	}
+}

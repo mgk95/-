@@ -1,0 +1,1163 @@
+// Dota2 Editor
+// Get latest version: https://github.com/zombieJ/nw-dota2editor
+
+"DOTAAbilities"
+{
+
+	"飞翔"
+	{
+		"BaseClass"	"ability_datadriven"
+		"AbilityTextureName"	"abaddon_death_coil"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitDamageType"	"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_YES"
+		"CastFilterRejectCaster"	"1"
+		"AbilityType"	"DOTA_ABILITY_TYPE_BASIC"
+		"HotKeyOverride"	"C"
+		"MaxLevel"	"1"
+		"RequiredLevel"	"1"
+		"LevelsBetweenUpgrades"	"1"
+		"AbilityCastPoint"	"0.1"
+		"AbilityCooldown"	"5"
+		"AbilityManaCost"	"0"
+		"AbilityCastRange"	"600"
+		"AbilityCastRangeBuffer"	"700"
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_abaddon/abaddon_death_coil.vpcf"
+		}
+		// 123123
+		"OnSpellStart"
+		{
+			"TrackingProjectile"
+			{
+				"Target"	"TARGET"
+				"EffectName"	"particles/units/heroes/hero_abaddon/abaddon_death_coil.vpcf"
+				"Dodgeable"	"0"
+				"ProvidesVision"	"1"
+				"MoveSpeed"	"3000"
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"1"
+			"Damage"
+			{
+				"Target"	"TARGET"
+				"Type"	"DAMAGE_TYPE_MAGICAL"
+				"Damage"	"500"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_DKc"
+			{
+				"Passive"	"1"
+			}
+		}
+	}
+
+	"将神"
+	{
+		"BaseClass"	"ability_datadriven"
+		"AbilityTextureName"	"monkey_king_bar_wall"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitDamageType"	"DAMAGE_TYPE_MAGICAL"
+		"AbilityType"	"DOTA_ABILITY_TYPE_BASIC"
+		"MaxLevel"	"1"
+		"RequiredLevel"	"1"
+		"LevelsBetweenUpgrades"	"1"
+		"AbilityCastPoint"	"1"
+		"AbilityCastAnimation"	"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityCooldown"	"5"
+		"AbilityManaCost"	"0"
+		"AbilityCastRange"	"600"
+		"AOERadius"	"600"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"POINT"
+				"Function"	"TianXuanPoShenHuang"
+				"ScriptFile"	"scripts/vscripts/abilities/hero/hero_xb.lua"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_将神"
+			{
+				"Attributes"	"MODIFIER_ATTRIBUTE_NONE"
+				"Duration"	"%stun_time"
+				"TextureName"	"custom/hero_xiaobai_yaozhenposhenhuang"
+				"IsDebuff"	"1"
+				"OnCreated"
+				{
+					"Stun"
+					{
+						"Target"	"TARGET"
+						"Duration"	"%stun_time"
+					}
+				}
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"xishu"	"170"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"basedamage"	"9000"
+			}
+			"03"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"radio"	"700"
+			}
+			"04"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"stun_time"	"3"
+			}
+			"05"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"fire_duration"	"4"
+			}
+		}
+	}
+
+	"分裂"
+	{
+		"BaseClass"	"ability_datadriven"
+		"AbilityTextureName"	"alpha_wolf_critical_strike"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_sven/sven_spell_great_cleave.vpcf"
+		}
+		"Modifiers"
+		{
+			"modifier_弟弟救我"
+			{
+				"Passive"	"1"
+				"OnAttackLanded"
+				{
+					"CleaveAttack"
+					{
+						"CleavePercent"	"%CleavePercent"
+						"CleaveRadius"	"500"
+						"CleaveEffect"	"particles/units/heroes/hero_sven/sven_spell_great_cleave.vpcf"
+					}
+				}
+				"IsBuff"	"1"
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"CleavePercent"	"10 20 30"
+			}
+		}
+	}
+
+	"概率AOE"
+	{
+		"BaseClass"	"ability_datadriven"
+		"AbilityTextureName"	"abyssal_underlord_atrophy_aura"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	}
+
+	// Rewrite of the Sven Great Cleave ability
+	// Author: Pizzalol
+	// Date: 28.12.2014.
+	"newAbility"
+	{
+		// General
+		// -------------------------------------------------------------------------------------------------------------
+		"BaseClass"	"ability_datadriven"
+		"AbilityTextureName"	"sven_great_cleave"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_YES"
+		// Precache
+		// -------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_sven/sven_spell_great_cleave.vpcf"
+		}
+		"Modifiers"
+		{
+			"modifier_great_cleave_datadriven"
+			{
+				"Passive"	"1"
+				"IsHidden"	"1"
+				"OnAttackLanded"
+				{
+					"CleaveAttack"
+					{
+						"CleavePercent"	"%great_cleave_damage"
+						"CleaveRadius"	"%great_cleave_radius"
+						"CleaveEffect"	"particles/units/heroes/hero_sven/sven_spell_great_cleave.vpcf"
+					}
+				}
+			}
+		}
+		// Special
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"great_cleave_radius"	"300.0"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"great_cleave_damage"	"20 35 50 65"
+			}
+		}
+	}
+
+	// Rewrite of the Medusa Mana Shield ability
+	// Author: Pizzalol, Noya
+	// Date: 04.03.2015.
+	// NOTE: This is a POST DAMAGE REDUCTION Mana Shield
+	"newAbility_2"
+	{
+		// General
+		// -------------------------------------------------------------------------------------------------------------
+		"BaseClass"	"ability_datadriven"
+		"AbilityTextureName"	"medusa_mana_shield"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		// Casting
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"	"0.4 0.4 0.4 0.4"
+		// Precache
+		// -------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_medusa/medusa_mana_shield_impact.vpcf"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_medusa.vsndevts"
+			"particle"	"particles/units/heroes/hero_medusa/medusa_mana_shield_cast.vpcf"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_medusa.vsndevts"
+			"particle"	"particles/units/heroes/hero_medusa/medusa_mana_shield_end.vpcf"
+			"particle"	"particles/units/heroes/hero_medusa/medusa_mana_shield.vpcf"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_medusa.vsndevts"
+		}
+		"OnToggleOn"
+		{
+			"FireSound"
+			{
+				"EffectName"	"Hero_Medusa.ManaShield.On"
+				"Target"	"CASTER"
+			}
+			"FireEffect"
+			{
+				"EffectName"	"particles/units/heroes/hero_medusa/medusa_mana_shield_cast.vpcf"
+				"EffectAttachType"	"follow_origin"
+				"Target"	"CASTER"
+			}
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_mana_shield_datadriven"
+				"Target"	"CASTER"
+			}
+		}
+		"OnToggleOff"
+		{
+			"FireSound"
+			{
+				"EffectName"	"Hero_Medusa.ManaShield.Off"
+				"Target"	"CASTER"
+			}
+			"FireEffect"
+			{
+				"EffectName"	"particles/units/heroes/hero_medusa/medusa_mana_shield_end.vpcf"
+				"EffectAttachType"	"follow_origin"
+				"Target"	"CASTER"
+			}
+			"RemoveModifier"
+			{
+				"ModifierName"	"modifier_mana_shield_datadriven"
+				"Target"
+				{
+					"Center"	"CASTER"
+					"Flags"	"DOTA_UNIT_TARGET_FLAG_DEAD"
+				}
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_mana_shield_datadriven"
+			{
+				"Passive"	"0"
+				"IsHidden"	"0"
+				"IsDebuff"	"0"
+				"EffectName"	"particles/units/heroes/hero_medusa/medusa_mana_shield.vpcf"
+				"EffectAttachType"	"follow_origin"
+				// "%attack_damage" is set to the damage value after mitigation
+				"OnTakeDamage"
+				{
+					"FireSound"
+					{
+						"EffectName"	"Hero_Medusa.ManaShield.Proc"
+						"Target"	"UNIT"
+					}
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_medusa/mana_shield.lua"
+						"Function"	"ManaShield"
+						"Damage"	"%attack_damage"
+					}
+				}
+				"ThinkInterval"	"0.03"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_medusa/mana_shield.lua"
+						"Function"	"ManaShieldHealth"
+					}
+				}
+			}
+		}
+		// Special
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"damage_per_mana"	"1.6 1.9 2.2 2.5"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"absorption_tooltip"	"60"
+			}
+		}
+	}
+
+	"newAbility_3"
+	{
+		// General
+		// -------------------------------------------------------------------------------------------------------------
+		"BaseClass"	"ability_datadriven"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+
+	// Rewrite of the Chen Hand of God ability
+	// Author: Pizzalol
+	// Date: December 30, 2015
+	// Version: 6.86
+	// Type: Datadriven
+	//
+	// ----- FILE REQUIREMENTS -----
+	// Script files:
+	// scripts/vscripts/heroes/hero_chen/hand_of_god.lua
+	"newAbility_4"
+	{
+		// General
+		// -------------------------------------------------------------------------------------------------------------
+		"BaseClass"	"ability_datadriven"
+		"AbilityTextureName"	"chen_hand_of_god"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"SpellImmunityType"	"SPELL_IMMUNITY_ALLIES_YES"
+		"FightRecapLevel"	"2"
+		"AbilityType"	"DOTA_ABILITY_TYPE_ULTIMATE"
+		// Casting
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"	"0.3 0.3 0.3"
+		// Time
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"	"160.0 140.0 120.0"
+		// Cost
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"	"200 300 400"
+		// Precache
+		// -------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_chen.vsndevts"
+			"particle"	"particles/units/heroes/hero_chen/chen_hand_of_god.vpcf"
+		}
+		"OnSpellStart"
+		{
+			"ActOnTargets"
+			{
+				"Target"
+				{
+					"Center"	"CASTER"
+					"Radius"	"GLOBAL"
+					"Teams"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+					"Types"	"DOTA_UNIT_TARGET_HERO"
+				}
+				"Action"
+				{
+					"FireSound"
+					{
+						"EffectName"	"Hero_Chen.HandOfGodHealHero"
+						"Target"	"TARGET"
+					}
+					"FireEffect"
+					{
+						"EffectName"	"particles/units/heroes/hero_chen/chen_hand_of_god.vpcf"
+						"EffectAttachType"	"attach_hitloc"
+						"Target"	"TARGET"
+					}
+					"Heal"
+					{
+						"Target"	"TARGET"
+						"HealAmount"	"%heal_amount"
+					}
+				}
+			}
+			"ActOnTargets"
+			{
+				"Target"
+				{
+					"Center"	"CASTER"
+					"Radius"	"GLOBAL"
+					"Teams"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+					"Types"	"DOTA_UNIT_TARGET_ALL"
+					"Flags"	"DOTA_UNIT_TARGET_FLAG_PLAYER_CONTROLLED"
+				}
+				"Action"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_chen/hand_of_god.lua"
+						"Function"	"HandOfGod"
+						"sound"	"Hero_Chen.HandOfGodHealCreep"
+						"hand_particle"	"particles/units/heroes/hero_chen/chen_hand_of_god.vpcf"
+					}
+				}
+			}
+		}
+		// Special
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"heal_amount"	"200 300 400"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"cooldown_scepter"	"30"
+			}
+			"03"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"ancient_creeps_scepter"	"1 2 3"
+			}
+		}
+	}
+
+	// Rewrite of Earthshaker Aftershock
+	// Author: YOLOSPAGHETTI
+	// Date: July 30, 2016
+	// Version: 6.88
+	// Type: Datadriven
+	//
+	// ----- FILE REQUIREMENTS -----
+	// Script files:
+	// scripts/vscripts/heroes/hero_earthshaker/aftershock.lua
+	"newAbility_5"
+	{
+		// General
+		// -------------------------------------------------------------------------------------------------------------
+		"BaseClass"	"ability_datadriven"
+		"AbilityTextureName"	"earthshaker_aftershock"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"	"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_NO"
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_earthshaker/temp_eruption_dirt.vpcf"
+			"particle"	"particles/units/heroes/hero_earthshaker/temp_eruption_ripple_b.vpcf"
+		}
+		"Modifiers"
+		{
+			"modifier_aftershock_datadriven"
+			{
+				"Passive"	"1"
+				"IsHidden"	"1"
+				"OnAbilityExecuted"
+				{
+					"DelayedAction"
+					{
+						"Delay"	"0.01"
+						"Action"
+						{
+							"RunScript"
+							{
+								"ScriptFile"	"heroes/hero_earthshaker/aftershock.lua"
+								"Function"	"Aftershock"
+								"particle1"	"particles/units/heroes/hero_earthshaker/temp_eruption_dirt.vpcf"
+								"particle2"	"particles/units/heroes/hero_earthshaker/temp_eruption_ripple_b.vpcf"
+							}
+						}
+					}
+				}
+			}
+		}
+		// Special
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"aftershock_range"	"300"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"tooltip_duration"	"0.6 0.9 1.2 1.5"
+			}
+		}
+		// Time
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilityDuration"	"0.6 0.9 1.2 1.5"
+		// Damage.
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilityDamage"	"50 75 100 125"
+		// Stats
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportBonus"	"100"
+	}
+
+	"newAbility_6"
+	{
+		// General
+		// -------------------------------------------------------------------------------------------------------------
+		"BaseClass"	"ability_datadriven"
+		"AbilityTextureName"	"doom_bringer_infernal_blade"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		// Time
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"	"40.0"
+		// Cost
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"	"0"
+		"Modifiers"
+		{
+			"modifier_newAbility_6"
+			{
+				"Passive"	"1"
+				"IsHidden"	"0"
+				"IsDebuff"	"0"
+				"IsBuff"	"1"
+				"OnAttackLanded"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"scripts/vscripts/AOE.lua"
+						"Function"	"aoe"
+					}
+				}
+			}
+		}
+		// Special
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"duration"	"8.0"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"customval_bonus_damage"	"12"
+			}
+			"03"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"customval_armor_bonus"	"3"
+			}
+			"04"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"health_regen"	"1"
+			}
+			"05"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"radius"	"700"
+			}
+			"06"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"xs"	"5"
+			}
+			"07"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"radius"	"300 400 500"
+			}
+		}
+	}
+
+	// Rewrite of the Jakiro Dual Breath ability
+	// Author: Ractidous
+	// Date: February 17, 2016
+	// Version: 6.86
+	// Type: Datadriven
+	//
+	// ----- FILE REQUIREMENTS -----
+	// Script files:
+	// scripts/vscripts/heroes/hero_jakiro/dual_breath.lua
+	//
+	// KV files:
+	// scripts/npc/abilities/jakiro/dual_breath_fiery_datadriven.txt
+	"newAbility_7"
+	{
+		// General
+		// -------------------------------------------------------------------------------------------------------------
+		"BaseClass"	"ability_datadriven"
+		"AbilityTextureName"	"jakiro_dual_breath"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitDamageType"	"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"	"1"
+		"AbilityCastPoint"	"0.65 0.65 0.65 0.65"
+		// Time
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"	"10.0 10.0 10.0 10.0"
+		// Cost
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"	"135 140 155 170"
+		// Casting
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"	"550"
+		// Data driven
+		// -------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_jakiro/jakiro_dual_breath_ice.vpcf"
+			"particle"	"particles/units/heroes/hero_jakiro/jakiro_dual_breath_fire.vpcf"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_jakiro.vsndevts"
+		}
+		"OnSpellStart"
+		{
+			"FireSound"
+			{
+				"EffectName"	"Hero_Jakiro.DualBreath"
+				"Target"	"CASTER"
+			}
+			"RunScript"
+			{
+				"Target"	"POINT"
+				"ScriptFile"	"heroes/hero_jakiro/dual_breath.lua"
+				"Function"	"Launch_IcyBreath"
+				"distance"	"%range"
+				"start_radius"	"%start_radius"
+				"end_radius"	"%end_radius"
+				"speed"	"%speed_fire"
+			}
+			"ApplyModifier"
+			{
+				"Target"	"CASTER"
+				"ModifierName"	"modifier_dual_breath_pre_launch_fiery_breath_datadriven"
+				"Duration"	"%fire_delay"
+			}
+			"DelayedAction"
+			{
+				"Delay"	"%fire_delay"
+				"Action"
+				{
+					"RunScript"
+					{
+						"Target"	"POINT"
+						"ScriptFile"	"heroes/hero_jakiro/dual_breath.lua"
+						"Function"	"Launch_FieryBreath"
+						"fiery_ability_name"	"dual_breath_fiery_datadriven"
+						"distance"	"%range"
+						"start_radius"	"%start_radius"
+						"end_radius"	"%end_radius"
+						"speed"	"%speed_fire"
+					}
+				}
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"0"
+			"ApplyModifier"
+			{
+				"Target"	"TARGET"
+				"ModifierName"	"modifier_dual_breath_slow_datadriven"
+				"Duration"	"%AbilityDuration"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_dual_breath_pre_launch_fiery_breath_datadriven"
+			{
+				"IsHidden"	"1"
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"States"
+				{
+					"MODIFIER_STATE_ROOTED"	"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+			"modifier_dual_breath_slow_datadriven"
+			{
+				"IsHidden"	"0"
+				"IsDebuff"	"1"
+				"IsPurgable"	"1"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%slow_movement_speed_pct"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%slow_attack_speed_pct"
+				}
+			}
+			"modifier_dual_breath_burn_datadriven"
+			{
+				"IsHidden"	"0"
+				"IsDebuff"	"1"
+				"IsPurgable"	"1"
+				"Duration"	"%AbilityDuration"
+				"ThinkInterval"	"%burn_interval"
+				"OnIntervalThink"
+				{
+					"Damage"
+					{
+						"Target"	"TARGET"
+						"Type"	"DAMAGE_TYPE_MAGICAL"
+						"Damage"	"%burn_damage * %burn_interval"
+					}
+				}
+			}
+		}
+		// Special
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"start_radius"	"200 200 200 200"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"end_radius"	"250 250 250 250"
+			}
+			"03"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"range"	"750 750 750 750"
+			}
+			"04"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"speed"	"1050 1050 1050 1050"
+			}
+			"05"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"fire_delay"	"0.3 0.3 0.3 0.3"
+			}
+			"06"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"burn_damage"	"20 40 60 80"
+			}
+			"07"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"slow_movement_speed_pct"	"-28 -32 -36 -40"
+			}
+			"08"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"slow_attack_speed_pct"	"-28 -32 -36 -40"
+			}
+			"09"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"tooltip_duration"	"5"
+			}
+			"10"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"speed_fire"	"1050"
+			}
+			// Extra
+			"11"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"burn_interval"	"0.5"
+			}
+		}
+		"AbilityDuration"	"5.0"
+		// Damage.
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilityDamage"	"0"
+		// Stats
+		// -------------------------------------------------------------------------------------------------------------
+		// Applies two modifiers
+		"AbilityModifierSupportValue"	"0.25"
+	}
+
+	// Rewrite of the Queen of Pain Scream of Pain ability
+	// Author: Pizzalol
+	// Date: 19.12.2014.
+	"newAbility_8"
+	{
+		// General
+		// -------------------------------------------------------------------------------------------------------------
+		"BaseClass"	"ability_datadriven"
+		"AbilityTextureName"	"queenofpain_scream_of_pain"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitDamageType"	"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityCastPoint"	"0.0 0.0 0.0 0.0"
+		// Time
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"	"7.0 7.0 7.0 7.0"
+		// Cost
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"	"110 120 130 140"
+		// Casting
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"	"0"
+		// Precache
+		// -------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_queenofpain.vsndevts"
+			"particle"	"particles/units/heroes/hero_queenofpain/queen_scream_of_pain_owner.vpcf"
+			"particle"	"particles/units/heroes/hero_queenofpain/queen_scream_of_pain.vpcf"
+		}
+		"OnSpellStart"
+		{
+			"FireSound"
+			{
+				"EffectName"	"Hero_QueenOfPain.ScreamOfPain"
+				"Target"	"CASTER"
+			}
+			"AttachEffect"
+			{
+				"EffectName"	"particles/units/heroes/hero_queenofpain/queen_scream_of_pain_owner.vpcf"
+				"EffectAttachType"	"attach_origin"
+				"Target"	"CASTER"
+			}
+			"ActOnTargets"
+			{
+				"Target"
+				{
+					"Center"	"CASTER"
+					"Radius"	"%area_of_effect"
+					"Teams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types"	"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+				}
+				"Action"
+				{
+					"TrackingProjectile"
+					{
+						"Target"	"TARGET"
+						"EffectName"	"particles/units/heroes/hero_queenofpain/queen_scream_of_pain.vpcf"
+						"Dodgeable"	"0"
+						"ProvidesVision"	"0"
+						"MoveSpeed"	"%projectile_speed"
+						"SourceAttachment"	"DOTA_PROJECTILE_ATTACHMENT_HITLOCATION"
+					}
+				}
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"Damage"
+			{
+				"Target"	"TARGET"
+				"Type"	"DAMAGE_TYPE_MAGICAL"
+				"Damage"	"%AbilityDamage"
+			}
+		}
+		// Special
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"area_of_effect"	"475"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"projectile_speed"	"900"
+			}
+		}
+		// Damage.
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilityDamage"	"85 165 225 300"
+	}
+
+	// Rewrite of the Mirana Sacred Arrow ability
+	// Author: Pizzalol
+	// Date: 26.09.2015.
+	"newAbility_9"
+	{
+		// General
+		// -------------------------------------------------------------------------------------------------------------
+		"BaseClass"	"ability_datadriven"
+		"AbilityTextureName"	"mirana_arrow"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitDamageType"	"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"	"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"	"1"
+		"AbilityCastPoint"	"0.5 0.5 0.5 0.5"
+		// Time
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"	"17.0"
+		// Cost
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"	"100 100 100 100"
+		// Casting
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"	"3000"
+		// Precache
+		// -------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_mirana.vsndevts"
+			"particle"	"particles/units/heroes/hero_mirana/mirana_spell_arrow.vpcf"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_mirana.vsndevts"
+		}
+		"OnSpellStart"
+		{
+			"FireSound"
+			{
+				"EffectName"	"Hero_Mirana.ArrowCast"
+				"Target"	"CASTER"
+			}
+			"LinearProjectile"
+			{
+				"Target"	"POINT"
+				"EffectName"	"particles/units/heroes/hero_mirana/mirana_spell_arrow.vpcf"
+				"MoveSpeed"	"%arrow_speed"
+				"StartRadius"	"%arrow_width"
+				"StartPosition"	"attach_origin"
+				"EndRadius"	"%arrow_width"
+				"FixedDistance"	"%arrow_range"
+				"TargetTeams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"TargetTypes"	"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+				"TargetFlags"	"DOTA_UNIT_TARGET_FLAG_NONE"
+				"HasFrontalCone"	"0"
+				"ProvidesVision"	"1"
+				"VisionRadius"	"%arrow_vision"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/hero_mirana/arrow.lua"
+				"Function"	"LaunchArrow"
+				"Target"	"POINT"
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"FireSound"
+			{
+				"EffectName"	"Hero_Mirana.ArrowImpact"
+				"Target"
+				{
+					"Center"	"TARGET"
+					"Flags"	"DOTA_UNIT_TARGET_FLAG_DEAD"
+				}
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/hero_mirana/arrow.lua"
+				"Function"	"ArrowHit"
+				"Target"	"TARGET"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/hero_mirana/arrow.lua"
+				"Function"	"ArrowVision"
+			}
+		}
+		"OnProjectileFinish"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/hero_mirana/arrow.lua"
+				"Function"	"ArrowVision"
+			}
+		}
+		// Special
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"arrow_speed"	"857.0"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"arrow_width"	"115"
+			}
+			"03"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"arrow_range"	"3000"
+			}
+			"04"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"arrow_max_stunrange"	"1500"
+			}
+			"05"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"arrow_min_stun"	"0.01"
+			}
+			"06"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"arrow_max_stun"	"5.0"
+			}
+			"07"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"arrow_bonus_damage"	"140"
+			}
+			"08"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"arrow_vision"	"650"
+			}
+			"09"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"arrow_max_damagerange"	"1500"
+			}
+			"10"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"vision_duration"	"3.0"
+			}
+		}
+		"AbilityDuration"	"3.11 3.11 3.11 3.11"
+		// Damage.
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilityDamage"	"50 140 230 320"
+	}
+
+	// Rewrite of Nevermore Necromastery
+	// Author: Noya
+	// Date: April 5, 2015
+	"newAbility_10"
+	{
+		// General
+		// -------------------------------------------------------------------------------------------------------------
+		"BaseClass"	"ability_datadriven"
+		"AbilityTextureName"	"nevermore_necromastery"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_nevermore.vsndevts"
+			"particle"	"particle_name"
+			"particle"	"particles/units/heroes/hero_nevermore/nevermore_necro_souls.vpcf"
+			"particle"	"particles/units/heroes/hero_nevermore/nevermore_souls.vpcf"
+		}
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/hero_nevermore/necromastery.lua"
+				"Function"	"NecromasteryDeath"
+				"modifier"	"modifier_necromastery"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_soul_collector"
+			{
+				"Passive"	"1"
+				"IsHidden"	"1"
+				"EffectName"	"particle_name"
+				"EffectAttachType"	"follow_origin"
+				"OnKill"
+				{
+					"FireEffect"
+					{
+						"EffectName"	"particles/units/heroes/hero_nevermore/nevermore_necro_souls.vpcf"
+						"EffectAttachType"	"follow_origin"
+						// DEADFLAG?
+						"Target"	"TARGET"
+					}
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_nevermore/necromastery.lua"
+						"Function"	"NecromasteryStack"
+						"modifier"	"modifier_necromastery"
+					}
+				}
+			}
+			"modifier_necromastery"
+			{
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE | MODIFIER_ATTRIBUTE_PERMANENT"
+				"EffectName"	"particles/units/heroes/hero_nevermore/nevermore_souls.vpcf"
+				"EffectAttachType"	"follow_origin"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"	"%necromastery_damage_per_soul"
+				}
+			}
+		}
+		// Special
+		// -------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"necromastery_damage_per_soul"	"2"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"necromastery_max_souls"	"15 22 29 36"
+			}
+			"03"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"necromastery_soul_release"	"0.5"
+			}
+			"04"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"necromastery_souls_hero_bonus"	"11"
+			}
+		}
+		"OnCastbar"	"0"
+	}
+}

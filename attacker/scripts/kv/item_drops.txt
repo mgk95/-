@@ -1,0 +1,83 @@
+"Drops"
+{
+    "yang"    
+    {
+        "1"
+        {
+            "ItemSets"
+            {
+            "1"  "item_A"
+            "2"  "item_B"
+            "3"  "item_C"
+            }
+            "Chance" "100" //必掉其中之一
+        }   
+        "2"
+        {
+            "Item"      "item_D"
+            "Chance"    "50"           
+            "Multiple"  "3"
+        }
+    }
+
+    "niu"
+    {
+        "1"
+        {
+            "ItemSets"
+            {
+                "1" "item_A"
+                "2" "item_B"
+                "3" "item_C"
+            }
+            "Chance" "100" //必掉其中之一
+        }
+        "2"
+        {
+            "Item"      "item_D" 
+            "Chance"    "50"
+            "Multiple"  "3"
+        } 
+    }
+
+    "huoren"
+    {
+        "1"
+        {
+            "ItemSets"
+            {
+                "1" "item_A"
+                "2" "item_B"
+                "3" "item_C"
+            }
+            "Chance" "100" //必掉其中之一
+        }
+        "2"
+        {
+            "Item"      "item_D" 
+            "Chance"    "50"
+            "Multiple"  "3"
+        } 
+    }
+
+    "wolf"
+    {
+        "1"
+        {
+            "ItemSets"
+            {
+                "1" "item_A"
+                "2" "item_B"
+                "3" "item_C"
+            }
+            "Chance" "100" //必掉其中之一
+        }
+        "2"
+        {
+            "Item"      "item_D" 
+            "Chance"    "50"
+            "Multiple"  "3"
+        } 
+    }
+
+}

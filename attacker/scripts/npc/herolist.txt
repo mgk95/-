@@ -1,0 +1,4 @@
+"CustomHerolist"
+{
+    "npc_dota_hero_nyx_assassin"        "-1"
+}
